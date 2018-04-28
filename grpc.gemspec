@@ -38,7 +38,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake-compiler',      '~> 1.0'
   s.add_development_dependency 'rake-compiler-dock', '~> 0.5.1'
   s.add_development_dependency 'rspec',              '~> 3.2'
-  s.add_development_dependency 'rubocop',            '~> 0.30.0'
+  s.add_development_dependency 'rubocop',            '~> 0.49.0'
   s.add_development_dependency 'signet',             '~> 0.7.0'
 
   s.extensions = %w(src/ruby/ext/grpc/extconf.rb)
