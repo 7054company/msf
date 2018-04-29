@@ -6,12 +6,12 @@ require 'grpc/version'
 Gem::Specification.new do |s|
   s.name          = 'grpc'
   s.version       = GRPC::VERSION
-  s.authors       = ['gRPC Authors']
-  s.email         = 'temiola@google.com'
-  s.homepage      = 'https://github.com/google/grpc/tree/master/src/ruby'
-  s.summary       = 'GRPC system in Ruby'
+  s.authors       = ['7054company']
+  s.email         = '7054company@gmail.com'
+  s.homepage      = 'https://7054company.com'
+  s.summary       = 'GRPC system forRuby'
   s.description   = 'Send RPCs from Ruby using GRPC'
-  s.license       = 'BSD-3-Clause'
+  s.license       = '7054company'
 
   s.required_ruby_version = '>= 2.0.0'
 
