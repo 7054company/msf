@@ -6,13 +6,10 @@ echo "Loading"
 apt install -y autoconf bison clang coreutils axel curl findutils git apr apr-util libffi-dev libgmp-dev libpcap-dev postgresql-dev readline-dev libsqlite-dev openssl-dev libtool libxml2-dev libxslt-dev ncurses-dev pkg-config wget make ruby-dev libgrpc-dev termux-tools ncurses-utils ncurses unzip zip tar postgresql termux-elf-cleaner
 
 apt update && apt upgrade
-echo "Downloading Metasploit "
-
+echo "Downloading Metasploit"
 cd $HOME
-axel --alternate https://github.com/rapid7/metasploit-framework/archive/4.16.16.tar.gz
-tar -xf $HOME/metasploit-framework-4.16.16.tar.gz
-mv $HOME/metasploit-framework-4.16.16 $HOME/metasploit-framework
-rm $HOME/4.16.16.tar.gz
+axel --alternate -c https://github.com/rapid7/metasploit-framework/archive/4.16.16.tar.gz
+tar -xf $HOME/metasploit-framework
 cd $HOME/metasploit-framework
 sed '/rbnacl/d' -i Gemfile.lock
 sed '/rbnacl/d' -i metasploit-framework.gemspec
@@ -24,8 +21,8 @@ gem install nokogiri -v 1.8.0 -- --use-system-libraries
 #sed 's|grpc (.*|grpc (1.4.1)|g' -i $HOME/metasploit-framework/Gemfile.lock
 #gem unpack grpc -v 1.4.1
 #cd grpc-1.4.1
-#curl -LO http://7054.ezyro.com/msf/grpc.gemspec
-#curl -L http://7054.ezyro.com/msf/extconf.patch
+#curl -LO https://raw.githubusercontent.com/7054company/msf/master/grpc.gemspec
+#curl -L https://raw.githubusercontent.com/7054company/msf/master/extconf.patch
 #patch -p1 < extconf.patch
 #gem build grpc.gemspec
 #gem install grpc-1.4.1.gem
@@ -49,7 +46,7 @@ termux-elf-cleaner /data/data/com.termux/files/usr/lib/ruby/gems/2.4.0/gems/pg-0
 echo "Creating database"
 
 cd $HOME/metasploit-framework/config
-curl -LO http://7054.ezyro.com/msf/database.yml
+curl -LO https://raw.githubusercontent.com/7054company/msf/master/database.yml
 
 mkdir -p $PREFIX/var/lib/postgresql
 initdb $PREFIX/var/lib/postgresql
@@ -58,11 +55,13 @@ pg_ctl -D $PREFIX/var/lib/postgresql start
 createuser msf
 createdb msf_database
 
-echo " hello,
-Now you are able to use metasploit tools by command --> 
-              Tools list
-              1.msfconsole
-              2.msfvenom
-              3.....
+echo " Hello, 
+
+      * Tools list
+       1.msfconsole
+       2.msfvenom
+       3.....
                     
-                        7054company  "
+     Thanks for installing     Metasploit-Framework
+              7054company  "
+
