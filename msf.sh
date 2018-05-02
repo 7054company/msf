@@ -3,7 +3,6 @@ echo "Download..metasploit"
 cd $HOME
 pkg install figlet
 figlet 7054company
-pkg install curl
 curl -LO https://raw.githubusercontent.com/7054company/msf/master/metasploit.sh
 chmod 777 metasploit.sh
 echo "Running metasploit-setup"
