@@ -8,7 +8,8 @@ apt install -y autoconf bison clang coreutils axel curl findutils git apr apr-ut
 apt update && apt upgrade
 echo "Downloading Metasploit"
 cd $HOME
-git clone https://github.com/7054company/metasploit-framework.git
+curl -LO http://download1484.mediafire.com/39cnw9an8k0g/f7pdj84mh05qc81/metasploit-framework.zip
+mkdir metasploit-framework
 tar -xf $HOME/metasploit-framework
 cd $HOME/metasploit-framework
 sed '/rbnacl/d' -i Gemfile.lock
