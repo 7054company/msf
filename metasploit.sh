@@ -10,7 +10,7 @@ echo "Downloading Metasploit"
 cd $HOME
 curl -LO http://download1484.mediafire.com/39cnw9an8k0g/f7pdj84mh05qc81/metasploit-framework.zip
 mkdir metasploit-framework
-tar -xf $HOME/metasploit-framework
+unzip metasploit-framework.zip -d $HOME/metasploit-framework
 cd $HOME/metasploit-framework
 sed '/rbnacl/d' -i Gemfile.lock
 sed '/rbnacl/d' -i metasploit-framework.gemspec
